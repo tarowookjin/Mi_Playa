@@ -1,3 +1,7 @@
+.clear{
+	clear: both;
+}
+
 table,th,td{
 	border:1px dashed #607D8B;
 }
@@ -27,6 +31,7 @@ body{
 }
 div.body-navbar{
 	margin-top:0px;
+	float: left;
 	
 }
 div.body-navbar a{
@@ -43,6 +48,30 @@ div.body-navbar a:hover{
 	color:#5C6BC0;
 	border-color:#9E9E9E;
 }
+/*---------------------Imprimir--------------------*/
+div.imprimir{
+	margin-top:0px;
+	margin-left: 100px;
+	margin-bottom: 10px;
+	float: left;
+	
+}
+div.imprimir a{
+	text-decoration:none;
+	color:#1A237E;
+	font-size:12px;
+	padding:2px;
+	border: 1px solid #263238;
+	border-radius:30px;
+}
+
+div.imprimir a:hover{
+	text-decoration:none;
+	color:#5C6BC0;
+	border-color:#9E9E9E;
+}
+
+/*--------------------------------------------------*/
 html{
 	background:#455A64;
 }
