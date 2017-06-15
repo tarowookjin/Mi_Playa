@@ -1,28 +1,3 @@
-/*------------------------Header-------------------*/
-#header{
-	float: left;
-}
-header div img{
-	margin-top: 10px;
-	margin-left: 1px;
-	margin-right: 10px;
-	position: relative;
-}
-h6{
-	font-style: italic;
-}
-
-header div h1{
-	font-family:verdana;
-	margin-top: 0px;
-	font-size: 24px;
-	color: #330000;
-}
-
-header div h6 {
-	margin-bottom: 0px;
-}
-/*-------------------------------------------------*/
 .clear{
 	clear: both;
 }
@@ -57,7 +32,7 @@ body{
 div.body-navbar{
 	margin-top:0px;
 	float: left;
-	
+
 }
 div.body-navbar a{
 	text-decoration:none;
@@ -79,7 +54,7 @@ div.imprimir{
 	margin-left: 100px;
 	margin-bottom: 10px;
 	float: left;
-	
+
 }
 div.imprimir a{
 	text-decoration:none;
@@ -100,4 +75,60 @@ div.imprimir a:hover{
 html{
 	background:#455A64;
 }
+/*----------Inicio---------------------------------*/
 
+#main {
+	min-height: 100px;
+	min-width: 120px;
+	margin: 0;
+	padding: 20px 20px;
+	display: -webkit-flex;
+	display:         flex;
+	-webkit-flex-flow: row;
+	flex-flow: row;
+	display: -moz-flex;
+	-moz-flex-flow: row;
+}
+
+#main > p a{
+	margin: 4px;
+	padding: 10px 10px;
+	border: 1px solid black;
+	border-radius: 7pt;
+	background:#78909C;
+	text-decoration: none;
+	color: white;
+	-webkit-flex: 3 1 50%;
+	-moz-flex: 3 1 50%;
+	flex: 3 1 50%;
+	-webkit-order: 1;
+	-moz-order: 1;
+	order: 1;
+}
+
+.inicio header, .inicio footer{
+	display: block;
+	margin: 4px;
+	padding: 5px;
+	min-height: 100px;
+}
+
+/* Demasiado estrecho para soportar tres columnas */
+@media all and (max-width: 1200px) {
+
+	#main{
+		-webkit-flex-flow: column;
+		-moz-flex-flow: column;
+					flex-flow: column;
+				}
+
+	#main > article, #main > nav, #main > aside {
+	/* Return them to document order */
+	-webkit-order: 0;
+					order: 0;
+ }
+
+ #main > nav, #main > aside, header, footer {
+	min-height: 50px;
+	max-height: 50px;
+ }
