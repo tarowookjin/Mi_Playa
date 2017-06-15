@@ -16,9 +16,13 @@ body{
 /*Center Web Page Content*/
 	width:90%;
 	margin:auto;
+	margin-top:10px;
+	margin-bottom:20px;
 /* */
 	background:#F5F5F5;
 	padding:20px;
+	border-radius:20px;
+	box-shadow: 10px 10px 5px #263238;
 }
 html{
 	background:#455A64;
