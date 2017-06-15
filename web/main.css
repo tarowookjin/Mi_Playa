@@ -5,6 +5,7 @@ table{
 	border-collapse:collapse;
 }
 th{
+	background:#B0BEC5;
 	padding:5px;
 }
 td{
@@ -20,9 +21,27 @@ body{
 	margin-bottom:20px;
 /* */
 	background:#F5F5F5;
-	padding:20px;
+	padding:10px 20px 20px 20px;
 	border-radius:20px;
 	box-shadow: 10px 10px 5px #263238;
+}
+div.body-navbar{
+	margin-top:0px;
+	
+}
+div.body-navbar a{
+	text-decoration:none;
+	color:#1A237E;
+	font-size:12px;
+	padding:2px;
+	border: 1px solid #263238;
+	border-radius:30px;
+}
+
+div.body-navbar a:hover{
+	text-decoration:none;
+	color:#5C6BC0;
+	border-color:#9E9E9E;
 }
 html{
 	background:#455A64;
