@@ -4,7 +4,7 @@
 }
 header div img{
 	margin-top: 10px;
-	margin-left: 1px;
+	margin-left: 10px;
 	margin-right: 10px;
 	position: relative;
 }
@@ -15,6 +15,7 @@ h6{
 header div h1{
 	font-family:verdana;
 	margin-top: 0px;
+	margin-right: 10px;
 	font-size: 24px;
 	color: #330000;
 }
@@ -22,13 +23,23 @@ header div h1{
 header div h6 {
 	margin-bottom: 0px;
 }
+
 /*-------------------------------------------------*/
+
 /*------------------------Footer-------------------*/
 footer{
 	font-size: 9px;
 	font-family:verdana;
 }
 /*-------------------------------------------------*/
+/*------------------------Acerca de-------------------*/
+.acerca{
+	background-color: solid block #b3b3b3;
+	width: 100%;
+	margin:auto;
+}
+/*-------------------------------------------------*/
+
 .clear{
 	clear: both;
 }
