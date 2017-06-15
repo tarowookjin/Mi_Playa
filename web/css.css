@@ -11,7 +11,7 @@ body{
 }
 /*-----------------------------------------------------------------------------Cosas para el header y footer---------------------------------------------------------------------*/
 header{
-  height: 100px;
+  height: 70px;
   background-color: #a7acf3;
   font-size: 25px;
 }
@@ -28,7 +28,6 @@ header p{
   font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
-
 /*-----------------------------------------------------------------------------Cosas del Menú Principal que aun no se ha hecho------------------------------------------*/
 
 ul {
@@ -221,3 +220,5 @@ input:hover{
        width: 100%;
     }
 }
+
+
