@@ -4,17 +4,33 @@ html
     position:relative;
     min-height:100%;
 }
-/*-----------------------------------------------------------------------------Cosas para el header---------------------------------------------------------------------*/
 
+body{
+  padding: 0;
+  margin: 0;
+  background-image: url(img/fondo.jpg);
+}
+/*-----------------------------------------------------------------------------Cosas para el header y footer---------------------------------------------------------------------*/
+header{
+  height: 150px;
+  background-color: #a7acf3;
+}
+
+header img{
+  float: left;
+  width: 100px;
+}
 
 /*-----------------------------------------------------------------------------Cosas del Menú Principal que aun no se ha hecho------------------------------------------*/
 
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: 15px 15px;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: #333;*/
 }
 
 li {
@@ -31,6 +47,24 @@ li a {
 
 li a:hover:not(.active) {
     background-color: #111;
+}
+
+li ul{
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+
+li:hover > ul{
+  display: block;
+}
+
+li ul li{
+  position: relative;
+}
+
+ul li ul{
+  right: 850px;
 }
 
 .active {
@@ -152,12 +186,11 @@ input[type=textregistro], input[type=passwordregistro] {
 /* Add padding to container elements */
 .containerregistro {
     padding: 16px;
-    
+
 }
 .formregistro{
     border: 3px solid #f1f1f1;
     width: 40%;
-    float: right;
     position: relative;
     margin:auto;
     background-color: white;
