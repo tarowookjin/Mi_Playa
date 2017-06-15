@@ -121,7 +121,6 @@ html{
 
 #main {
 	min-height: 100px;
-	min-width: 120px;
 	margin: 0;
 	padding: 20px 20px;
 	display: -webkit-flex;
@@ -133,7 +132,7 @@ html{
 }
 
 #main > p a{
-	margin: 4px;
+	margin: 0px;
 	padding: 10px 10px;
 	border: 1px solid black;
 	border-radius: 7pt;
@@ -156,7 +155,7 @@ html{
 }
 
 /* Demasiado estrecho para soportar tres columnas */
-@media all and (max-width: 1200px) {
+@media all and (max-width: 100px) {
 
 	#main{
 		-webkit-flex-flow: column;
