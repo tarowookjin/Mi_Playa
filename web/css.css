@@ -1,4 +1,10 @@
 
+html
+{
+    position:relative;
+    min-height:100%;
+}
+
 /*-----------------------------------------------------------------------------Cosas del Menú Principal que aun no se ha hecho------------------------------------------*/
 
 ul {
@@ -149,10 +155,13 @@ input[type=textregistro], input[type=passwordregistro] {
 .formregistro{
     border: 3px solid #f1f1f1;
     width: 40%;
+    float: right;
+    position: relative;
     margin:auto;
+    background-color: white;
 }
 form:hover{
-    background-color: #FFFFE0
+    background-color: #FFFFE0;
 }
 input:hover{
     background-color: #AFEEEE;
