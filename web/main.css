@@ -188,22 +188,25 @@ div.form-wrapper{
 	min-height: 100px;
 }
 
-/* Demasiado estrecho para soportar tres columnas */
-@media all and (max-width: 1200px) {
-
-	#main{
-		-webkit-flex-flow: column;
-		-moz-flex-flow: column;
-					flex-flow: column;
-				}
-
-	#main > article, #main > nav, #main > aside {
-	/* Return them to document order */
-	-webkit-order: 0;
-					order: 0;
+ /*Menus del inicio*/
+ ul.menuGrid a {
+	 padding:20px;
+	 float:left;
+	 text-align:center;
+	 text-decoration:none;
  }
-
- #main > nav, #main > aside, header, footer {
-	min-height: 50px;
-	max-height: 50px;
+ ul.menuGrid{
+	 list-style:none;
  }
+ul.menuGrid a:hover{
+	background:#9E9E9E;
+}
+ ul.menuGrid img{
+ 	width:70px;
+ }
+ a.button{
+	 text-decoration:none;
+ 	border:1px solid grey;
+	border-radius:20px;
+       color:black;	
+}

@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html>
-<script>
-// When the user clicks on div, open the popup
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
-</script>
 <head>
 	<title></title>
 	<meta charset="utf-8">
@@ -14,20 +7,30 @@ function myFunction() {
 </head>
 <body>
 
-  <header class="inicio">
-    <img src="img/logoplaya.png" alt="">
-    <p>Mi Playita</p>
-  </header>
-  <div id="main">
-    <p><a href="#">Listado de Apartamentos</a></p>
-    <p><a href="#">Registar Clientes</a></p>
-    <p><a href="#">Reporte de Apartamentos Ocupados</a></p>
-    <p><a href="#">Registrar Alquiler</a></p>
-    <p><a href="#">Informe de ingreso</a></p>
-    <p><a href="#">Listado de clientes</a></p>
-  </div>
-  <footer class="inicio">
-    Mi Playita 2017
-  </footer>
+		<header>
+
+			<div id="header">
+				<img src="img/logoplaya.png" width="70px">
+			</div>
+			<div id="header">
+				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
+				<h1>Mi Playita S.A.</h1>
+			</div>
+			<br class="float-stopper">
+		</header>
+  <main>
+  <ul class="menuGrid">
+	  <a href="listadoApartamentos.html"><li><img src="img/lista.png"><p>Listado de Apartamentos</p></li></a>
+	  <a href="listadoClientes.html"><li><img src="img/lista.png"><p>Listado Clientes</p></li></a>
+    <a href="apartamentosOcupados.html"><li><img src="img/lista.png"><p>Reporte de Apartamentos Ocupados</p></li></a>
+    <a href="registroAlquiler.html"><li><img src="img/lista.png"><p>Registrar Alquiler</p></li></a>
+    <a href="informeIngreso.html"><li><img src="img/lista.png"><p>Informe de ingreso</p></li></a>
+    <a href="#"><li><img src="img/lista.png"><p>Listado de clientes</p></li></a>
+  </ul>
+  <br class="float-stopper">
+  </main>
+		<footer>
+			<p>Copyright © 1996–2017 Miplayita.com™. Todos los derechos reservados.</p>
+		</footer>
 </body>
 </html>
