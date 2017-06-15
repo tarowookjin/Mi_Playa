@@ -1,3 +1,49 @@
+/*------------------------Header-------------------*/
+#header{
+	float: left;
+}
+header div img{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative;
+}
+h6{
+	font-style: italic;
+}
+
+header div h1{
+	font-family:verdana;
+	margin-top: 0px;
+	margin-right: 10px;
+	font-size: 24px;
+	color: #330000;
+}
+
+header div h6 {
+	margin-bottom: 0px;
+}
+
+/*-------------------------------------------------*/
+
+/*------------------------Footer-------------------*/
+footer{
+	font-size: 9px;
+	font-family:verdana;
+}
+/*-------------------------------------------------*/
+/*------------------------Acerca de-------------------*/
+.acerca{
+	background-color: solid block #b3b3b3;
+	width: 100%;
+	margin:auto;
+}
+/*-------------------------------------------------*/
+
+.clear{
+	clear: both;
+}
+
 table,th,td{
 	border:1px dashed #607D8B;
 }
@@ -27,7 +73,8 @@ body{
 }
 div.body-navbar{
 	margin-top:0px;
-	
+	float: left;
+
 }
 div.body-navbar a{
 	text-decoration:none;
@@ -43,6 +90,30 @@ div.body-navbar a:hover{
 	color:#5C6BC0;
 	border-color:#9E9E9E;
 }
+/*---------------------Imprimir--------------------*/
+div.imprimir{
+	margin-top:0px;
+	margin-left: 100px;
+	margin-bottom: 10px;
+	float: left;
+
+}
+div.imprimir a{
+	text-decoration:none;
+	color:#1A237E;
+	font-size:12px;
+	padding:2px;
+	border: 1px solid #263238;
+	border-radius:30px;
+}
+
+div.imprimir a:hover{
+	text-decoration:none;
+	color:#5C6BC0;
+	border-color:#9E9E9E;
+}
+
+/*--------------------------------------------------*/
 html{
 	background:#455A64;
 }
@@ -76,3 +147,60 @@ div.form-wrapper{
 	margin:1%;
 	padding:10px;
 }
+/*----------Inicio---------------------------------*/
+
+#main {
+	min-height: 100px;
+	min-width: 120px;
+	margin: 0;
+	padding: 20px 20px;
+	display: -webkit-flex;
+	display:         flex;
+	-webkit-flex-flow: row;
+	flex-flow: row;
+	display: -moz-flex;
+	-moz-flex-flow: row;
+}
+
+#main > p a{
+	margin: 4px;
+	padding: 10px 10px;
+	border: 1px solid black;
+	border-radius: 7pt;
+	background:#78909C;
+	text-decoration: none;
+	color: white;
+	-webkit-flex: 3 1 50%;
+	-moz-flex: 3 1 50%;
+	flex: 3 1 50%;
+	-webkit-order: 1;
+	-moz-order: 1;
+	order: 1;
+}
+
+.inicio header, .inicio footer{
+	display: block;
+	margin: 4px;
+	padding: 5px;
+	min-height: 100px;
+}
+
+/* Demasiado estrecho para soportar tres columnas */
+@media all and (max-width: 1200px) {
+
+	#main{
+		-webkit-flex-flow: column;
+		-moz-flex-flow: column;
+					flex-flow: column;
+				}
+
+	#main > article, #main > nav, #main > aside {
+	/* Return them to document order */
+	-webkit-order: 0;
+					order: 0;
+ }
+
+ #main > nav, #main > aside, header, footer {
+	min-height: 50px;
+	max-height: 50px;
+ }
