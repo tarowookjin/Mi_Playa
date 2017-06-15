@@ -13,242 +13,177 @@
 		<div class="body-navbar">
 			<a class="nav-left" href=#>&#60;Menu Principal</a>
 		</div>
-		<br id="clear">
-		<br>
-		<div id="header">
-    		<img src="img/logoplaya.png" width="70px">
-    	</div>
-    	<div id="header">
-       		<h6>Las Mejores Vacaciones que Disfrutaras</h6>
-     		<h1>Mi Playita S.A.</h1>
-    	</div>
-    	<br id="clear">
-    	<br>
-    	<br>
-		</header>
-		<main>
-		<br id="clear">
-		<h4>Informacion del Apartamento</h4>
-		<ul>
-			<li>ID:41</li>
-			<li>Propietario:Elmer Santos</li>
-			<li>Recamaras:3</li>
-			<li>Año:2002</li>
-			<li>Costo de Alquiler:300$/Mes</li>
-			<li>Costo de Mantenimiento:10$/Año</li>
-		</ul>
-		<h4>Equipo Permanente</h4>
+
+		<h2>Listado de Apartamentos</h2>
+		<div class="form-wrapper">
+		<form>
+			<div class="fieldset-wrapper">	
+			<fieldset  class="filter-left" >
+				<h4>Filtros</h4>
+				<div class="input-combo">Propietario:<input type="text" name="propiet_name"></div>	
+				<div class="input-combo">Edificio:<input type="text" name="edif_name"></div>
+				<div class="input-combo">Año:<input type="number" name="ano" min="1950"></div>
+				<br>
+				<span>Recamaras</span>
+				<br>
+				<div class="input-combo">Minimo:<input type="number" name="recam_min" min="0"></div>
+				<div class="input-combo">Maximo:<input type="number" name="recam_max" min="0"></div>
+				<br>
+				<span>Costo de Alquiler</span>
+				<br>
+				<div class="input-combo">Minimo:<input type="number" name="cost_alq_min" min="0"></div>
+				<div class="input-combo">Maximo:	<input type="number" name="cost_alq_max"min="0" ></div>
+				<br>
+				<span>Costo de Mantenimiento</span>
+				<br>
+				<div class="input-combo">Minimo:<input type="number" name="cost_man_min" min="0"></div>
+				<div class="input-combo">Maximo:	<input type="number" name="cost_man_max"min="0" ></div>
+				<br>
+				<span>Estado</span>
+				<br>
+				<div class="input-combo">Disponibles:<input type="radio" name="estado" value="ocupado"></div>
+				
+				<div class="input-combo">Ocupados:<input type="radio" name="estado" value="ocupados"></div>
+				<div class="input-combo">Todos:<input type="radio" name="estado" value="todos"></div>
+				
+				<br>
+			</fieldset></div><!--
+			--!><div class="fieldset-wrapper"><fieldset class="table-prop-right">
+			<h4>Incluir</h4>
+
+				<div class="input-combo">ID:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Propietario:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Edificio:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Año:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Recamaras:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Costo de Alquiler:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Estado:<input type="checkbox" name="showProp"></div><br>
+				</fieldset></div>
+			
+		<br class="float-stopper">
+		<div class="submit-wrapper"><input type="submit" name="Filtrar"></div>
+		</form>
+		</div>
 			<table>
 				<tr>
+				<th>
+					ID
+				</th>
 					<th>
-						Nombre del Equipo
+						Propietario
 					</th>	
 					<th>
-						Cantidad
+						Edificio
 					</th>
 					<th>
-						Descripccion	
+						Año	
 					</th>	
+					<th>
+					Recamaras
+					</th>
+					<th>
+					Costo de Alquiler
+					</th>
+					<th>
+					Estado
+					</th>
 				</tr>
 				<tr>
 					<td>
-						Estufa
+					1
 					</td>
 					<td>
-						1
+					Pedro Calderon de la barca
 					</td>
 					<td>
-						Black & Decker 21
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Refrigeradores
+					2
 					</td>
 					<td>
-						2
+					2005
 					</td>
 					<td>
-						Samsung Gear 3000X
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Aires Acondicionados
+					3		
 					</td>
 					<td>
-						2
+					70$/Mes
 					</td>
 					<td>
-						Selectron 420 Blazing
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Lavadoras-Secadoras
-					</td>
-					<td>
-						1
-					</td>
-					<td>
-						Whirpool Breeze 4
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Camas
-					</td>
-					<td>
-						4
-					</td>
-					<td>
-						Doctor Dream FULL
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Comedor
-					</td>
-					<td>
-						1
-					</td>
-					<td>
-						Ikea
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Sillones de saña
-					</td>
-					<td>
-						4
-					</td>
-					<td>
-						Reclinables
+					Ocupado
 					</td>
 				</tr>
 
-
-
+				<tr>
+					<td>
+					2
+					</td>
+					<td>
+					Pedro Calderon de la barca
+					</td>
+					<td>
+					2
+					</td>
+					<td>
+					2009
+					</td>
+					<td>
+					5
+					</td>
+					<td>
+					150$/Mes
+					</td>
+					<td>
+					Disponible
+					</td>
+				</tr>
+				<tr>
+					<td>
+					3
+					</td>
+					<td>
+					Miguel de Cervantes Saavedra
+					</td>
+					<td>
+					5
+					</td>
+					<td>
+					1980
+					</td>
+					<td>
+					4
+					</td>
+					<td>
+					200$/Mes
+					</td>
+					<td>
+					Disponible
+					</td>
+				<tr>
+					<td>
+					4
+					</td>
+					<td>
+					Benito Perez Galdoz
+					</td>
+					<td>
+					2
+					</td>
+					<td>
+					2005
+					</td>
+					<td>
+					7
+					</td>
+					<td>
+					500$/Mes
+					</td>
+					<td>
+					Ocupado
+					</td>
+				</tr>
+				</tr>
 			</table>
 
 
-		<h4>Equipo Temporal</h4>
-			<table>
-				<tr>
-					<th>
-						Nombre del Equipo
-					</th>	
-					<th>
-						Cantidad
-					</th>
-					<th>
-						Descripccion	
-					</th>	
-				</tr>
-				<tr>
-					<td>
-						Platos	
-					</td>
-					<td>
-						20
-					</td>
-					<td>
-						Ceramica y plastico
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Tazas
-					</td>
-					<td>
-						5
-					</td>
-					<td>
-						Ceramica
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Ollas	
-					</td>
-					<td>
-						4
-					</td>
-					<td>
-						Acero Inoxidable
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Vasos	
-					</td>
-					<td>
-						10
-					</td>
-					<td>
-						Plastico y aluminio
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Cubiertos
-					</td>
-					<td>
-						30
-					</td>
-					<td>
-						Aluminio
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Microondas
-					</td>
-					<td>
-						1
-					</td>
-					<td>
-						Panasonic Waxy Coocker 2
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Televisores
-					</td>
-					<td>
-						4
-					</td>
-					<td>
-						Sony Bravia 32'
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Programacion por cable	
-					</td>
-					<td>
-						200
-					</td>
-					<td>
-						Plan Platinum de Sky
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Cafetera
-					</td>
-					<td>
-						1
-					</td>
-					<td>
-						Black & Decker NoSleepToday XL
-					</td>
-				</tr>
-
-
-
-			</table>
 		</main>
 			<br>
 			<br>

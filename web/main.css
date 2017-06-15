@@ -117,6 +117,36 @@ div.imprimir a:hover{
 html{
 	background:#455A64;
 }
+div.input-combo{
+	display:inline;
+	position:relative;
+	white-space:nowrap;
+}
+div.form-wrapper form div.fieldset-wrapper{
+	width:50%;
+	float:left;
+	margin-left:0px;
+	margin-right:0px;
+
+}
+fieldset{
+	border:none;
+}
+fieldset.filter-left span{
+	font-weight:bold;
+}
+br.float-stopper{
+	clear:both;
+}
+form div.submit-wrapper{
+	
+	text-align:center;
+}
+div.form-wrapper{
+	border:1px solid grey;
+	margin:1%;
+	padding:10px;
+}
 /*----------Inicio---------------------------------*/
 
 #main {
