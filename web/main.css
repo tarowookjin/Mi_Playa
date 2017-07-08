@@ -31,6 +31,12 @@ footer{
 	font-size: 9px;
 	font-family:verdana;
 }
+footer p a{
+	text-decoration: none;
+}
+footer p a:visited{
+	color: black;
+}
 /*-------------------------------------------------*/
 /*------------------------Acerca de-------------------*/
 #acerca{
