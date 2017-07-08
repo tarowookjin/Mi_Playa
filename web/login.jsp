@@ -1,32 +1,30 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html">
 <html>
+<head>
 <title>Inciar Sesión</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css.css">
+</head>
 <body>
-
-<!--<header>
-<div>
-    <img src="img/logoplaya.png" alt="">
-  <p>Mi Playita</p>
-  <ul>
-    <li><a href="#">Inicio</a></li>
-    <li><a href="#">Registrarse</a></li>
-    <li><a href="#">Login</a></li>
-    <li><a href="#">Cliente</a>
-        <ul>
-          <li><a href="#">Registrar</a></li>
-          <li><a href="#">Confirmacion</a></li>
-        </ul>
-    </li>
-  </ul>
-</div>
-</header>
-!-->
 <h2 id="h2login">Inicio de Sesión</h2>
 
-<form id="formlogin" action="Inicio.html" >
+<form id="formlogin" action="startSession.jsp" >
   <div class="containerl">
+  <%
+  	if(request.getParameter("loginStatus")=="conectionError")
+  	{
+  		out.print("<span class=\"errorText\">*Error de Coneccion</span>");
+  	}
+  	else
+  	{
+  		if(request.getParameter("loginStatus") !=null&& request.getParameter("loginStatus").equals("badLogin"))
+  		{
+  			out.println("<span class=\"errorText\">*Usuario/Contraseña erronea.</span>");
+  		}
+  	}
+  %>
     <label><b>Nombre de Usuario</b></label>
     <input type="text" placeholder="Introduzca su usuario" name="uname" required>
 
@@ -43,6 +41,5 @@
     
   </div>
 </form>
-
 </body>
 </html>
