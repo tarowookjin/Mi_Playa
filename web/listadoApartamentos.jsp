@@ -61,8 +61,6 @@
 				<br>
 			</fieldset></div>
 			</form>
-			
-			<!--
 			<div class="fieldset-wrapper"><fieldset class="table-prop-right">
 			<h4>Incluir</h4>
 
@@ -207,11 +205,8 @@
 			</div>
 			<br class="float-stopper">
 		</main>
-		<footer>
-			<p>Copyright © 1996–2017 Miplayita.com™. Todos los derechos reservados.</p>
-		</footer>
+		<%@include file="footer.jsp"%>
 	</body>
 
 
 </html>
--->

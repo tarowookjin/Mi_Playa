@@ -11,6 +11,7 @@
 
 		<footer>
 			<p>Copyright © 1996–2017 Miplayita.com™. Todos los derechos reservados.</p>
+			<p><a href="acercade.html">Acerca de Nostros</a></p>
 		</footer>
 </body>
 </html>

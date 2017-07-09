@@ -80,9 +80,7 @@
 			</div>
 			<br class="float-stopper">	
 		</main>
-		<footer>
-			<p>Copyright © 1996–2017 Miplayita.com™. Todos los derechos reservados.</p>
-		</footer>
+		<%@include file="footer.jsp"%>
 	</body>
 
 
