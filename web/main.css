@@ -78,7 +78,7 @@ body{
 /* */
 }
 body header,main,footer{
-	margin-bottom:20px;	
+	margin-bottom:20px;
 	background:#F5F5F5;
 	padding:10px 20px 20px 20px;
 	border-radius:20px;
@@ -152,7 +152,7 @@ br.float-stopper{
 	clear:both;
 }
 form div.submit-wrapper{
-	
+
 	text-align:center;
 }
 div.form-wrapper{
@@ -162,7 +162,7 @@ div.form-wrapper{
 }
 /*----------Inicio---------------------------------*/
 
-#main {
+/*#main {
 	min-height: 100px;
 	margin: 0;
 	padding: 20px 20px;
@@ -188,7 +188,7 @@ div.form-wrapper{
 	-webkit-order: 1;
 	-moz-order: 1;
 	order: 1;
-}
+}*/
 
 .inicio header, .inicio footer{
 	display: block;
@@ -217,5 +217,5 @@ ul.menuGrid a:hover{
 	 text-decoration:none;
  	border:1px solid grey;
 	border-radius:20px;
-       color:black;	
+       color:black;
 }
