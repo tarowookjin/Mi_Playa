@@ -14,7 +14,7 @@
   <div class="containerl">
   <%
   	if(request.getParameter("loginStatus")=="conectionError")
-  	{
+ 	{
   		out.print("<span class=\"errorText\">*Error de Coneccion</span>");
   	}
   	else

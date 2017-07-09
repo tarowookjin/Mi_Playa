@@ -59,8 +59,11 @@
 				<div class="input-combo">Todos:<input type="radio" name="estado" value="todos"></div>
 				
 				<br>
-			</fieldset></div><!--
-			--!><div class="fieldset-wrapper"><fieldset class="table-prop-right">
+			</fieldset></div>
+			</form>
+			
+			<!--
+			<div class="fieldset-wrapper"><fieldset class="table-prop-right">
 			<h4>Incluir</h4>
 
 				<div class="input-combo">ID:<input type="checkbox" name="showProp"></div><br>
@@ -211,3 +214,4 @@
 
 
 </html>
+-->
