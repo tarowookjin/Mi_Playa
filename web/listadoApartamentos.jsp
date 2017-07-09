@@ -1,0 +1,213 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Inventario de Apartamento
+		</title>
+		<link rel="stylesheet" type="text/css" href="main.css">		
+	</head>
+	<body>
+		<header>
+
+			<div id="header">
+				<img src="img/logoplaya.png" width="70px">
+			</div>
+			<div id="header">
+				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
+				<h1>Mi Playita S.A.</h1>
+			</div>
+			<br class="float-stopper">
+		</header>
+		<main>
+		<div class="body-navbar">
+			<a class="nav-left" href=Inicio.html>&#60;Menu Principal</a>
+		</div>
+		<br class="float-stopper">
+		<h2>Listado de Apartamentos</h2>
+		<div class="form-wrapper">
+		<form>
+			<div class="fieldset-wrapper">	
+			<fieldset  class="filter-left" >
+				<h4>Filtros</h4>
+				<div class="input-combo">Propietario:<input type="text" name="propiet_name"></div>	
+				<div class="input-combo">Edificio:<input type="text" name="edif_name"></div>
+				<div class="input-combo">Año:<input type="number" name="ano" min="1950"></div>
+				<br>
+				<span>Recamaras</span>
+				<br>
+				<div class="input-combo">Minimo:<input type="number" name="recam_min" min="0"></div>
+				<div class="input-combo">Maximo:<input type="number" name="recam_max" min="0"></div>
+				<br>
+				<span>Costo de Alquiler</span>
+				<br>
+				<div class="input-combo">Minimo:<input type="number" name="cost_alq_min" min="0"></div>
+				<div class="input-combo">Maximo:	<input type="number" name="cost_alq_max"min="0" ></div>
+				<br>
+				<span>Costo de Mantenimiento</span>
+				<br>
+				<div class="input-combo">Minimo:<input type="number" name="cost_man_min" min="0"></div>
+				<div class="input-combo">Maximo:	<input type="number" name="cost_man_max"min="0" ></div>
+				<br>
+				<span>Estado</span>
+				<br>
+				<div class="input-combo">Disponibles:<input type="radio" name="estado" value="ocupado"></div>
+				
+				<div class="input-combo">Ocupados:<input type="radio" name="estado" value="ocupados"></div>
+				<div class="input-combo">Todos:<input type="radio" name="estado" value="todos"></div>
+				
+				<br>
+			</fieldset></div><!--
+			--!><div class="fieldset-wrapper"><fieldset class="table-prop-right">
+			<h4>Incluir</h4>
+
+				<div class="input-combo">ID:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Propietario:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Edificio:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Año:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Recamaras:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Costo de Alquiler:<input type="checkbox" name="showProp"></div><br>
+				<div class="input-combo">Estado:<input type="checkbox" name="showProp"></div><br>
+				</fieldset></div>
+			
+		<br class="float-stopper">
+		<div class="submit-wrapper"><input type="submit" name="Filtrar"></div>
+		</form>
+		</div>
+			<table>
+				<tr>
+				<th>
+					ID
+				</th>
+					<th>
+						Propietario
+					</th>	
+					<th>
+						Edificio
+					</th>
+					<th>
+						Año	
+					</th>	
+					<th>
+					Recamaras
+					</th>
+					<th>
+					Costo de Alquiler
+					</th>
+					<th>
+					Estado
+					</th>
+				</tr>
+				<tr>
+						<td>
+						<a href="inventarioApartamento.html">1</a>
+						</td>
+						<td>
+						<a href="inventarioApartamento.html">Pedro Calderon de la barca</a>
+						</td>
+						<td>
+						2
+						</td>
+						<td>
+						2005
+						</td>
+						<td>
+						3		
+						</td>
+						<td>
+						70$/Mes
+						</td>
+						<td>
+						Ocupado
+						</td>
+					</tr>
+
+				<tr>
+					<td>
+					2
+					</td>
+					<td>
+					Pedro Calderon de la barca
+					</td>
+					<td>
+					2
+					</td>
+					<td>
+					2009
+					</td>
+					<td>
+					5
+					</td>
+					<td>
+					150$/Mes
+					</td>
+					<td>
+					Disponible
+					</td>
+				</tr>
+				<tr>
+					<td>
+					3
+					</td>
+					<td>
+					Miguel de Cervantes Saavedra
+					</td>
+					<td>
+					5
+					</td>
+					<td>
+					1980
+					</td>
+					<td>
+					4
+					</td>
+					<td>
+					200$/Mes
+					</td>
+					<td>
+					Disponible
+					</td>
+				<tr>
+					<td>
+					4
+					</td>
+					<td>
+					Benito Perez Galdoz
+					</td>
+					<td>
+					2
+					</td>
+					<td>
+					2005
+					</td>
+					<td>
+					7
+					</td>
+					<td>
+					500$/Mes
+					</td>
+					<td>
+					Ocupado
+					</td>
+				</tr>
+				</tr>
+			</table>
+
+
+			<div class="body-navbar">
+				<a class="nav-left" href=#>DESCARGAR</a>
+			</div>
+			<div class="imprimir">
+				<a class="nav-left" href=#>IMPRIMIR</a>
+			</div>
+			<br class="float-stopper">
+		</main>
+		<footer>
+			<p>Copyright © 1996–2017 Miplayita.com™. Todos los derechos reservados.</p>
+		</footer>
+	</body>
+
+
+</html>
