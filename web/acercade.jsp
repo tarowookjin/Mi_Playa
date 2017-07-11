@@ -50,12 +50,7 @@
 		<br>
 		<br>
 		</main>
-		<footer>
-			<p>Copyright © 1996–2017 Miplayita.com™. Todos los derechos reservados.</p>
-			<br>
-		</footer>
-		
-
+		<%@include file="footer.jsp"%>
 	</body>
 
 
