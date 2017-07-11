@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html">
+
+  
+<!DOCTYPE html>
 <html>
 <head>
 <title>Inciar Sesión</title>
@@ -8,11 +10,19 @@
 <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
+
+
+   
+    
+
 <h2 id="h2login">Inicio de Sesión</h2>
 
-<form id="formlogin" action="startSession.jsp" >
+<form id="formlogin" action="../LoginServlet" method="post" >
   <div class="containerl">
   <%
+
+  
+  
   	if(request.getParameter("loginStatus")=="conectionError")
  	{
   		out.print("<span class=\"errorText\">*Error de Coneccion</span>");
