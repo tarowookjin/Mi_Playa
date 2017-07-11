@@ -25,25 +25,40 @@ public class LoginServlet extends HttpServlet{
 		Statement stment =null;
 		ResultSet resultSet = null;
 		//get request parameters for userID and password
-		String user = request.getParameter("user");
-		String pwd = request.getParameter("pwd");
+		String user = request.getParameter("uname");
+		String pwd = request.getParameter("psw");
 		
 		//get servlet config init params
-		String userID = getServletConfig().getInitParameter("uname");
-		String password = getServletConfig().getInitParameter("password");
+		//String userID = 
+		//String password = 
 		//logging example
 		log("User="+user+"::password="+pwd);
 		
 		try {
-			
+			boolean goodLogin=false;
+
 			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(DBURL, DBUSER, DBPSWD);
-			stment = con.createStatement();
-			resultSet = stment.executeQuery("SELECT usuario FROM Empleado WHERE usuario="+user+";");
-			if(!resultSet.wasNull()){
+			stment = con.createStatement(); 
+			log(""+stment.executeQuery("SELECT usuario FROM Empleado;").getFetchSize());
+			log("SELECT usuario FROM Empleado WHERE usuario=\'"+user+"\';");
+			resultSet = stment.executeQuery("SELECT usuario,contrasena FROM Empleado WHERE usuario=\'"+user+"\';");
+	
+			while(resultSet.next())
+			{	
+				String resultUser = resultSet.getString("usuario");
+				String resultPass = resultSet.getString("contrasena");
+				if(resultUser.equals(user) && resultPass.equals(pwd))
+				{
+					goodLogin=true;
+					break;
+				}
+			}
+			if(goodLogin){
+				System.out.println(resultSet.getString("usuario"));
 				response.sendRedirect("web/inicio.jsp");
 			}else{
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("web/login.jsp");
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/login.jsp");
 				PrintWriter out= response.getWriter();
 				out.println("<font color=red>Either user name or password is wrong.</font>");
 				rd.include(request, response);
