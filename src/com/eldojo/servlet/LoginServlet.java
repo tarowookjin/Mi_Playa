@@ -21,27 +21,20 @@ public class LoginServlet extends HttpServlet{
 	private static final String DBURL="jdbc:mysql://localhost/miplaya";
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
 		Connection con=null;
 		Statement stment =null;
 		ResultSet resultSet = null;
-		//get request parameters for userID and password
 		String user = request.getParameter("uname");
 		String pwd = request.getParameter("psw");
-		
-		//get servlet config init params
-		//String userID = 
-		//String password = 
-		//logging example
 		log("User="+user+"::password="+pwd);
-		
+
 		try {
 			boolean goodLogin=false;
 
 			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(DBURL, DBUSER, DBPSWD);
 			stment = con.createStatement(); 
-			log(""+stment.executeQuery("SELECT usuario FROM Empleado;").getFetchSize());
-			log("SELECT usuario FROM Empleado WHERE usuario=\'"+user+"\';");
 			resultSet = stment.executeQuery("SELECT usuario,contrasena FROM Empleado WHERE usuario=\'"+user+"\';");
 	
 			while(resultSet.next())
@@ -58,11 +51,11 @@ public class LoginServlet extends HttpServlet{
 				System.out.println(resultSet.getString("usuario"));
 				response.sendRedirect("web/inicio.jsp");
 			}else{
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/login.jsp");
-				PrintWriter out= response.getWriter();
-				out.println("<font color=red>Either user name or password is wrong.</font>");
-				rd.include(request, response);
 				
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/login.jsp");
+				response.setContentType("text/html");
+				out.println("Either user name or password is wrong.");
+				rd.include(request, response);	
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {

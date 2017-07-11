@@ -7,7 +7,7 @@
 <head>
 <title>Inciar Sesión</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css.css">
 </head>
 <body>
 
