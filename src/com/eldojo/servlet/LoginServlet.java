@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet{
 				
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/login.jsp");
 				response.setContentType("text/html");
-				request.setAttribute("errMessage","Either user name or password is wrong.");
+				request.setAttribute("errMessage","***Usuario/Contraseña Incorrecta.");
 				rd.forward(request, response);	
 			}
 			
