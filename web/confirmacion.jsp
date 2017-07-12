@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>Confirmacion</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/css.css">
   </head>
   <body>
 

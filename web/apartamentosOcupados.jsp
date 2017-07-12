@@ -6,7 +6,7 @@
 		<title>
 			Listado de Apartamentos Ocupados
 		</title>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css"		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">		
 	</head>
 	<body>
 		<header>
