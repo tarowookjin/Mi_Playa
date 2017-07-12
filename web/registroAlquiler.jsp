@@ -26,11 +26,11 @@
 		<br class="float-stopper">
     <form class="" action="confirmacion.html" method="get">
       Nombre:
-      <input type="text" name="Nombre" value="" required="" autofocus="" placeholder="" title="Introduzca su nombre aqui"><br><br>
+      <input type="text" name="Nombre" required autofocus placeholder="Escriba su Nombre" title="Introduzca su nombre aqui"><br><br>
       Fecha de entrada:
-      <input type="date" name="fecha_entrada" value="" required=""><br><br>
+      <input type="date" name="fecha_entrada" required><br><br>
       Fecha de salida:
-      <input type="date" name="fecha_salida" value=""><br><br>
+      <input type="date" name="fecha_salida" required><br><br>
       Cantidad de personas:
       <select class="" name="cant_personas">
         <option value="1">1</option>

@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		
 		Connection con=null;
 		Statement stment =null;
 		ResultSet resultSet = null;
