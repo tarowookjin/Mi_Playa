@@ -11,7 +11,9 @@ header div img{
 h6{
 	font-style: italic;
 }
-
+p.error {
+	color:red;
+}
 header div h1{
 	font-family:verdana;
 	margin-top: 0px;

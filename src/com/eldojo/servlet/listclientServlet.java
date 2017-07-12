@@ -38,13 +38,23 @@ public class listclientServlet extends HttpServlet {
 			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(DBURL,DBUSER,DBPSWD);
 			stment = con.createStatement();
-			response.setContentType("text/html");
-			resultSet = stment.executeQuery("SELECT id_cliente,persona_ced FROM Cliente;");
-			String str="<tr><th>ID-Cliente</th><th>Cedula</th></tr>";
+			log("SELECT c.id_cliente, c.persona_ced, p.nombre, p.apellido "
+					+ "FROM Cliente AS c "
+					+ "INNER JOIN Persona AS p ON c.persona_ced=p.cedula;"
+					);
+			
+			resultSet = stment.executeQuery("SELECT c.id_cliente,c.persona_ced,p.nombre,p.apellido "
+					+ "FROM Cliente AS c INNER JOIN Persona AS p ON c.persona_ced=p.cedula;");
+
+			String str="<table><tr><th>ID-Cliente</th><th>Cedula</th><th>Nombre</th><th>Apellido</th></tr>";
 			while(resultSet.next()) {
-				str+="<tr><td>"+resultSet.getString(1)+"</td><td>"+resultSet.getString(2)+"</td></tr>";
+				str+="<tr><td>"+resultSet.getString(1)+"</td><td>"+resultSet.getString(2)
+						+"</td><td>"+resultSet.getString(3)
+						+"</td><td>"+resultSet.getString(4)
+						+"</td></tr>";
 			}
 			con.close();
+			response.setContentType("text/html");
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB/listadoClientes.jsp");
 			request.setAttribute("clientes",str);
 			rd.forward(request, response);
