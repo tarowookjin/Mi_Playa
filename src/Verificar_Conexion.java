@@ -1,12 +1,12 @@
 
 import java.sql.*;
 import javax.swing.JOptionPane;
-public class Conexion {
+public class Verificar_Conexion {
 	
-	    public String db = "miplaya";
-	    public String url = "jdbc:mariadb://localhost/"+db;
-	    public String user = "miplaya";
-	    public String pass = "Contra1234";
+	    private String db = "miplaya";
+	    private String url = "jdbc:mariadb://186.188.166.2:3306/"+db;
+	    private String user = "miplaya";
+	    private String pass = "Contra1234";
 
 
 	   public Connection Conectar(){
@@ -32,7 +32,7 @@ public class Conexion {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Conexion con= new Conexion();
+		Verificar_Conexion con= new Verificar_Conexion();
 		java.sql.Connection cn=con.Conectar();
 		 if(cn!=null){
 
