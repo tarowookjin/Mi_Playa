@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="java.io.PrintWriter"%>
 <!DOCTYPE html">
 <html>
 	<head>
@@ -7,7 +8,7 @@
 		<title>
 			Listado de Clientes 
 		</title>
-		<link rel="stylesheet" type="text/css" href="main.css">		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/main.css">		
 	</head>
 	<body>
 		<header>
@@ -27,32 +28,20 @@
 		</div>
 		<br id="clear">
 		<h4>Listado de Clientes</h4>
-			<table>
-				<tr>
-					<th>
-						ID-Cliente
-					</th>	
-					<th>
-						Nombre
-					</th>
-				</tr>
-				<tr>
-					<td>
-						999
-					</td>
-					<td>
-						Pepe Frog
-					</td>
-				</tr>
-				<tr>
-					<td>
-						666
-					</td>
-					<td>
-						Klel Wolfram
-					</td>
-				</tr>
-			</table>
+		<table>
+			<%
+			//tabla
+			String str=(String)pageContext.findAttribute("clientes");
+			if(str!=null)
+	    	{
+	    		out.println(str);
+	    	}
+			else
+			{
+	    		out.println("Algo salio mal :c");
+			}
+			%>
+		</table>
 			<div class="body-navbar">
 				<a class="nav-left" href=#>DESCARGAR</a>
 			</div>
