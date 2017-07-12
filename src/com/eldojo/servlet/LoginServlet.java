@@ -54,8 +54,8 @@ public class LoginServlet extends HttpServlet{
 				
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/login.jsp");
 				response.setContentType("text/html");
-				out.println("Either user name or password is wrong.");
-				rd.include(request, response);	
+				request.setAttribute("errMessage","Either user name or password is wrong.");
+				rd.forward(request, response);	
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {

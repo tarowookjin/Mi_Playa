@@ -38,7 +38,7 @@ public class listclientServlet extends HttpServlet {
 			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(DBURL,DBUSER,DBPSWD);
 			stment = con.createStatement();
-			resultSet = stment.executeQuery("SELECT id_cliente,persona_ced FROM cliente;");
+			resultSet = stment.executeQuery("SELECT id_cliente,persona_ced FROM Cliente;");
 			String str="<table><tr><th>ID-Cliente</th><th>Cedula</th></tr>";
 			while(resultSet.next()) {
 				str+="<tr><td>"+resultSet.getString(1)+"</td><td>"+resultSet.getString(2)+"</td></tr>";
