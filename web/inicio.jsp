@@ -21,7 +21,7 @@
 		</header>
   <main>
   <ul class="menuGrid">
-	<a href="listadoApartamentos.html"><li><img src="${pageContext.request.contextPath}/web/img/lista.png""><p>Listado de Apartamentos</p></li></a>
+	<a href="${pageContext.request.contextPath}/listapartServlet"><li><img src="${pageContext.request.contextPath}/web/img/lista.png""><p>Listado de Apartamentos</p></li></a>
 	<a href="${pageContext.request.contextPath}/listclientServlet"><li><img src="${pageContext.request.contextPath}/web/img/lista.png"><p>Listado Clientes</p></li></a>
     <a href="apartamentosOcupados.html"><li><img src="${pageContext.request.contextPath}/web/img/lista.png""><p>Reporte de Apartamentos Ocupados</p></li></a>
     <a href="registroAlquiler.html"><li><img src="${pageContext.request.contextPath}/web/img/lista.png""><p>Registrar Alquiler</p></li></a>
