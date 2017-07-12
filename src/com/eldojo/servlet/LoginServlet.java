@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet{
 	private static final String DBUSER = "miplaya";
 	private static final String DBPSWD ="Contra1234";
-	private static final String DBURL="jdbc:mysql://localhost/miplaya";
+	private static final String DBURL="jdbc:mysql://186.188.166.2:3306/miplaya";
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
