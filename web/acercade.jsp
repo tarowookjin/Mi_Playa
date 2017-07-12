@@ -6,7 +6,7 @@
 		<title>
 			Acerca de MiPlayita
 		</title>
-		<link rel="stylesheet" type="text/css" href="main.css">		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">		
 	</head>
 	<body>
 		<header>

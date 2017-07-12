@@ -30,7 +30,7 @@ public class listclientServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
+
 		Connection con=null;
 		Statement stment =null;
 		ResultSet resultSet = null;
@@ -55,7 +55,7 @@ public class listclientServlet extends HttpServlet {
 			}
 			con.close();
 			response.setContentType("text/html");
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB/listadoClientes.jsp");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/listadoClientes.jsp");
 			request.setAttribute("clientes",str);
 			rd.forward(request, response);
 			}

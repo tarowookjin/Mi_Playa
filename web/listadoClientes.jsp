@@ -8,7 +8,7 @@
 		<title>
 			Listado de Clientes 
 		</title>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/main.css">		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">		
 	</head>
 	<body>
 		<header>
@@ -42,6 +42,7 @@
 			}
 			%>
 		</table>
+		<br>
 			<div class="body-navbar">
 				<a class="nav-left" href=#>DESCARGAR</a>
 			</div>

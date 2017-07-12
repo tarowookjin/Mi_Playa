@@ -7,7 +7,7 @@
 		<title>
 			Inventario de Apartamento
 		</title>
-		<link rel="stylesheet" type="text/css" href="main.css">		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">		
 	</head>
 	<body>
 		<header>
