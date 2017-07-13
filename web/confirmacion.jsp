@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
     <%@ page import="com.eldojo.entities.*" %> 
     <%
+if(session.getAttribute("user") == null){
+	%> <jsp:forward page="/web/login.jsp" /><% 
+}
+%>
+    <%
 
 
 Client cliente = (Client) request.getAttribute("cliente");

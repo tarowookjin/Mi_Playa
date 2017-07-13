@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%
+if(session.getAttribute("user") == null){
+	%> <jsp:forward page="/web/login.jsp" /><% 
+}
+%>
 	<title>Inicio</title>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">
 </head>

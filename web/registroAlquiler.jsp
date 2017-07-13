@@ -5,6 +5,13 @@
 <html>
 <head>
 <%
+out.print(session.getAttribute("user") );
+if(session.getAttribute("user") == null){
+	
+	%> <jsp:forward page="/web/login.jsp" /><% 
+}
+%>
+<%
 Integer paso = 1;
 request.setAttribute("paso",paso);
 Client cliente = (Client) request.getAttribute("cliente");
