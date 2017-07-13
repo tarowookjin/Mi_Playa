@@ -95,6 +95,7 @@ public class inforingreServlet extends HttpServlet {
 						}
 						
 					}
+					
 					String str2="Propietario: "+propietario+"<tr>"
 							+"<th>ID-Apartamento</th>"
 							+"<th>Fecha de Alquiler</th>"
@@ -104,6 +105,7 @@ public class inforingreServlet extends HttpServlet {
 						resultSet = stment.executeQuery(preQuery2);
 						
 						while(resultSet.next()) {
+							log("HEYYYYMEASEFDFGDFH");
 							str2+="<tr><td>"+resultSet.getString(1)+"</td><td>"+resultSet.getString(2)
 									+"</td><td>"+resultSet.getString(3)
 									+"</td></tr>";

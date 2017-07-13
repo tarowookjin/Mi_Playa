@@ -41,9 +41,9 @@
 			<%
 			//tabla
 			String str2=(String)pageContext.findAttribute("lista_monto");
-			if(str!=null)
+			if(str2!=null)
 	    	{
-	    		out.println(str);
+	    		out.println(str2);
 	    	}
 			else
 			{
