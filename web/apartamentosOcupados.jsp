@@ -12,7 +12,7 @@
 		<header>
 
 			<div id="header">
-				<img src="img/logoplaya.png" width="70px">
+				<img src="${pageContext.request.contextPath}/web/img/logoplaya.png" width="70px">
 			</div>
 			<div id="header">
 				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
@@ -22,7 +22,7 @@
 		</header>
 		<main>
 		<div class="body-navbar">
-			<a class="nav-left" href=Inicio.html>&#60;Menu Principal</a>
+			<a class="nav-left" href=${pageContext.request.contextPath}/web/inicio.jsp>&#60;Menu Principal</a>
 		</div>
 		<br id="clear">
 		<h4>Listado de Apartamentos Ocupados</h4>
