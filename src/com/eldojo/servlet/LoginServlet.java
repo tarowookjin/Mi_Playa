@@ -14,6 +14,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
+import javax.servlet.http.HttpSession;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet{
 	private static final String DBUSER = "miplaya";
@@ -50,6 +52,9 @@ public class LoginServlet extends HttpServlet{
 			}
 			if(goodLogin){
 				System.out.println(resultSet.getString("usuario"));
+				HttpSession session = request.getSession();
+				session.setAttribute("user",resultSet.getString("usuario"));
+				
 				response.sendRedirect("web/inicio.jsp");
 			}else{
 				

@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<%
+if(session.getAttribute("user") == null){
+	%> <jsp:forward page="/web/login.jsp" /><% 
+}
+%>
 	<head>
 		<title>
 			Listado de Apartamentos Ocupados

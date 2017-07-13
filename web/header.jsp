@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html">
+<%
+if(session.getAttribute("user") == null){
+	%> <jsp:forward page="/web/login.jsp" /><% 
+}
+%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -26,6 +31,7 @@
 				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
 				<h1>Mi Playita S.A.</h1>
 			</div>
+			<form action="${pageContext.request.contextPath}/web/stopSession.jsp"><input type=submit value ="Cerrar Session"></form>
 			<div id="servertime">
 			<span class="more" id="demo"></span>
 			</div>

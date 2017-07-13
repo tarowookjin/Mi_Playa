@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"
     import="java.io.PrintWriter"%>
 <!DOCTYPE html">
+<%
+if(session.getAttribute("user") == null){
+	%> <jsp:forward page="/web/login.jsp" /><% 
+}
+%>
 <html>
 	<head>
 		<meta charset="utf-8">
