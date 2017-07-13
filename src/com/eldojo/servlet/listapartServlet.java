@@ -50,8 +50,8 @@ public class listapartServlet extends HttpServlet {
 		try {
 			cn=iziConn.Conectar();
 			stment = cn.createStatement();
-			log("SELECT a.id_apartamento,pe.nombre,a.edificio,a.ano,a.recamaras,a.costo_alquiler"
-					+"FROM Apartamento AS a JOIN Propietario AS p ON a.id_propietario=p.id_propietario" 
+			log("SELECT a.id_apartamento,pe.nombre,a.edificio,a.ano,a.recamaras,a.costo_alquiler "
+					+"FROM Apartamento AS a JOIN Propietario AS p ON a.id_propietario=p.id_propietario " 
 					+"JOIN Persona pe ON pe.cedula=p.persona_ced;");
 			
 			resultSet = stment.executeQuery("SELECT a.id_apartamento,pe.nombre,a.edificio,a.ano,a.recamaras,a.costo_alquiler"

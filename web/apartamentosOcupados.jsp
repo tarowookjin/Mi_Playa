@@ -9,17 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">		
 	</head>
 	<body>
-		<header>
-
-			<div id="header">
-				<img src="${pageContext.request.contextPath}/web/img/logoplaya.png" width="70px">
-			</div>
-			<div id="header">
-				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
-				<h1>Mi Playita S.A.</h1>
-			</div>
-			<br class="float-stopper">
-		</header>
+	<%@include file="/web/header.jsp"%>	
 		<main>
 		<div class="body-navbar">
 			<a class="nav-left" href=${pageContext.request.contextPath}/web/inicio.jsp>&#60;Menu Principal</a>
