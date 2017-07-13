@@ -15,53 +15,43 @@
 			<a class="nav-left" href=Inicio.html>&#60;Menu Principal</a>
 		</div>
 		<br id="clear">
-		<form>
-			<div class=input-combo>Propietario: <input type="text" name="propName"></div>
+		<br>
+		<form action="${pageContext.request.contextPath}/inforingreServlet" method="post">
+			<div class=input-combo>
+			Propietario: 
+			<select class="" name="chose_propietario">
+        	<%
+			//tabla
+			String str=(String)pageContext.findAttribute("propietarios_disp");
+			if(str!=null)
+	    	{
+	    		out.println(str);
+	    	}
+			else
+			{
+	    		out.println("Algo salio mal :c");
+			}
+			%>
+      		</select><br><br>
+			</div>
+			<input class ="button" type="submit" name="enviar" value="Enviar">
 		</form>
 		<h4>Informe para Propietario</h4>
-		Propietario: Don Justo Martinelli
 			<table>
-				<tr>
-					<th>
-						Fecha alquiler
-					</th>	
-					<th>
-						Monto Cobrado
-					</th>
-				</tr>
-				<tr>
-					<td>
-						12/12/12
-					</td>
-					<td>
-						900
-					</td>
-				</tr>
-				<tr>
-					<td>
-						9/9/9
-					</td>
-					<td>
-						4000
-					</td>
-				</tr>
-				<tr>
-					<td>
-						4/4/4
-					</td>
-					<td>
-						420
-					</td>
-				</tr>
-				<tr>
-					<td>
-						1/1/1
-					</td>
-					<td>
-						5467
-					</td>
-				</tr>
+			<%
+			//tabla
+			String str2=(String)pageContext.findAttribute("lista_monto");
+			if(str!=null)
+	    	{
+	    		out.println(str);
+	    	}
+			else
+			{
+	    		out.println("Algo salio mal :c");
+			}
+			%>
 			</table>
+			<br>
 			<div class="body-navbar">
 				<a class="nav-left" href=#>DESCARGAR</a>
 			</div>

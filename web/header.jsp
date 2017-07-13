@@ -5,7 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">
+		<script type="text/javascript">
+		var myVar=setInterval(function () {myTimer()}, 1000);
+		var counter = 0;
+		function myTimer() {
+   		var date = new Date();
+    	document.getElementById("demo").innerHTML = date.toUTCString()
+		}
+		</script>		
 </head>
 <body>
 		<header>
@@ -16,6 +24,9 @@
 			<div id="header">
 				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
 				<h1>Mi Playita S.A.</h1>
+			</div>
+			<div id="servertime">
+			<span class="more" id="demo"></span>
 			</div>
 			<br class="float-stopper">
 		</header>
