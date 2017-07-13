@@ -65,8 +65,6 @@ public class inforingreServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		
 		String preQuery="SELECT CONCAT(pe.nombre,' ',pe.apellido) AS Propietario " 
 				+"FROM Propietario AS p "
 				+"JOIN Persona AS pe ON p.propietario_ced=pe.cedula ";
@@ -115,7 +113,8 @@ public class inforingreServlet extends HttpServlet {
 					response.setContentType("text/html");
 					RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/informeIngreso.jsp");
 					request.setAttribute("lista_monto",str2);
-					rd.forward(request, response);
+					doGet(request, response);
+					//rd.forward(request, response);
 				} catch (SQLException | ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					System.err.println(e);

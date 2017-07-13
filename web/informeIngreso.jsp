@@ -45,10 +45,6 @@
 	    	{
 	    		out.println(str2);
 	    	}
-			else
-			{
-	    		out.println("Algo salio mal :c");
-			}
 			%>
 			</table>
 			<br>
