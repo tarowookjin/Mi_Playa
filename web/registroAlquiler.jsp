@@ -45,7 +45,7 @@ log(cliente.getApellido());
     Paso 1:
       Nombre:
       <input type="text" name="nombre" required autofocus placeholder="Nombre del Cliente" title="Nombre" value = "<%out.print(cliente.getNombre());%>"><br><br>
-       Cedula:
+       Apellido:
       <input type="text" name="apellido" required autofocus placeholder="Apellido del Cliente" title="Apellido" value = "<%out.print(cliente.getCedula());%>"><br><br>
       Cedula:
       <input type="text" name="cedula" required autofocus placeholder="Cedula del Cliente" title="Introduzca su nombre aqui" value = "<%out.print(cliente.getCedula());%>"><br><br>
