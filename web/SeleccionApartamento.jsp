@@ -27,17 +27,7 @@ if(alquiler!=null)
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">
   </head>
   <body>
-		<header>
-
-			<div id="header">
-				<img src="img/logoplaya.png" width="70px">
-			</div>
-			<div id="header">
-				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
-				<h1>Mi Playita S.A.</h1>
-			</div>
-			<br class="float-stopper">
-		</header>
+	<%@include file="/web/header.jsp"%>
 	    <main>
 	    <form action="${pageContext.request.contextPath}/RegistroAlquiler" method="post">
 	    <input type="hidden" name="action" value="back">
