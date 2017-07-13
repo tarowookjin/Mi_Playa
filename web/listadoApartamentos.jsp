@@ -81,8 +81,7 @@
 			}
 			%>
 			</table>
-
-
+			<br>
 			<div class="body-navbar">
 				<a class="nav-left" href=#>DESCARGAR</a>
 			</div>
