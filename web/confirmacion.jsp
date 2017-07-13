@@ -43,7 +43,7 @@ if(alquiler!=null)
     </header>
 
     <section>
-    <form action=/RegistroAlquiler method=post>
+    <form action="${pageContext.request.contextPath}/RegistroAlquiler" method="post">
       <%
 	      out.println("<p>Nombre:"+cliente.getNombre()+"</p>");
 	      out.println("<p>Apellido:"+cliente.getApellido()+"</p>");

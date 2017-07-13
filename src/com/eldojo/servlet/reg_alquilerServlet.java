@@ -1,6 +1,7 @@
 package com.eldojo.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -84,9 +85,69 @@ public class reg_alquilerServlet extends HttpServlet {
 				rd.forward(request, response);
 				
 			}
-			if(action.equals("Confirmar"))
+			if(action.equals("Confirm"))
 			{
 				
+				try
+				{
+					String checkPersonaQuery="SELECT * FROM Persona WHERE cedula = "+"\'"+client.getCedula()+"\'";
+					String checkClienteQuery="SELECT * FROM Cliente WHERE persona_ced = "+"\'"+client.getCedula()+"\'";
+					con = iziConn.Conectar();
+					stment = con.createStatement();
+					log(checkPersonaQuery);
+					resultSet=stment.executeQuery(checkPersonaQuery);
+					if(!resultSet.next())
+					{
+						String insertNewPersona= "INSERT INTO Persona(cedula,nombre,apellido) VALUES("
+								+"\'"+client.getCedula()+"\'"+","
+								+"\'"+client.getNombre()+"\'"+","
+								+"\'"+client.getApellido()+"\'"+");";
+						con = iziConn.Conectar();
+						stment = con.createStatement();
+						log(insertNewPersona);
+						resultSet=stment.executeQuery(insertNewPersona);
+					}
+					resultSet=stment.executeQuery(checkClienteQuery);
+					if(!resultSet.next())
+					{
+						String insertNewCliente ="INSERT INTO Cliente(persona_ced) VALUES(\'"+client.getCedula()+"\');";
+						con = iziConn.Conectar();
+						stment = con.createStatement();
+						log(insertNewCliente );
+						resultSet=stment.executeQuery(insertNewCliente);
+					}
+						
+				String recoverClienteIdQuery="SELECT id_cliente FROM Cliente WHERE persona_ced="+"\'"+client.getCedula()+"\'";
+				con = iziConn.Conectar();
+				stment = con.createStatement();
+				log(recoverClienteIdQuery);
+				resultSet=stment.executeQuery(recoverClienteIdQuery);
+				
+				if(resultSet.next())
+				{
+					client.setCod_cli(resultSet.getInt("id_cliente"));
+					
+				}
+					
+				String insertAlquilerQuery= "INSERT INTO ClienteApartamento(cant_personas,forma_pago,monto,fecha_entrada,fecha_salida,id_cliente,id_apartamento) "
+						+ "VALUES(" 
+						+rent.getCantPersonas()+","
+						+"\'"+rent.getTipoPago()+"\'"+","
+						+apartment.getCosto_alquiler()*1.07+","
+						+"\'"+rent.getFecha_entrada()+"\'"+","
+						+"\'"+rent.getFecha_salida()+"\'"+","
+						+client.getCod_cli()+","
+						+apartment.getId_apartamento()+");";
+				con = iziConn.Conectar();
+				stment = con.createStatement();
+				log(insertAlquilerQuery);
+				resultSet=stment.executeQuery(insertAlquilerQuery);	
+				response.getWriter().println("<a href=\"${pageContext.request.contextPath}/web/inicio.jsp\">TODO SALIO BIEN, REGRESAR AL INICIO</a>");
+				}		
+						catch(Exception e)
+						{
+							e.printStackTrace();
+						}
 			}
 			
 		}
@@ -111,8 +172,8 @@ public class reg_alquilerServlet extends HttpServlet {
 			client.setNombre(request.getParameter("nombre"));
 			client.setApellido(request.getParameter("apellido"));
 			client.setCedula(request.getParameter("cedula"));
-			String avaibleApartmentsQuery = "SELECT * FROM Apartamento AS a INNER JOIN ClienteApartamento AS ca on a.id_apartamento = ca.id_apartamento WHERE ca.fecha_salida<"  
-					+"\'"+rent.getFecha_salida()+"\'";
+			String avaibleApartmentsQuery = "SELECT * FROM Apartamento AS a LEFT JOIN ClienteApartamento AS ca on a.id_apartamento = ca.id_apartamento WHERE (ca.fecha_salida IS NULL OR ca.fecha_salida<"  
+					+"\'"+rent.getFecha_entrada()+"\');";
 				try
 				{
 					con = iziConn.Conectar();
@@ -123,6 +184,7 @@ public class reg_alquilerServlet extends HttpServlet {
 					while(resultSet.next())
 					{
 						Apartment tmpApt = new Apartment();
+						tmpApt.setId_apartamento(resultSet.getInt("id_apartamento"));
 						tmpApt.setCosto_alquiler(resultSet.getDouble("costo_alquiler"));
 						tmpApt.setAno(resultSet.getInt("ano"));
 						tmpApt.setCosto_mantenimiento(resultSet.getDouble("costo_mantenimiento"));
