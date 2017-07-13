@@ -28,26 +28,9 @@ if(alquiler!=null)
 <html>
   <head>
     <title>Confirmacion</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/css.css">
-  </head>
-  <body>
-
-    <header>
-      <img src="img/logoplaya.png" alt="">
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Registrarse</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Cliente</a>
-            <ul>
-              <li><a href="#">Registrar</a></li>
-              <li><a href="#">Confirmacion</a></li>
-            </ul>
-        </li>
-      </ul>
-    </header>
-
-    <section>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/main.css">
+<%@include file="header.jsp"%>
+<main>
     <form action="${pageContext.request.contextPath}/RegistroAlquiler" method="post">
       <%
 	      out.println("<p>Nombre:"+cliente.getNombre()+"</p>");
@@ -62,10 +45,9 @@ if(alquiler!=null)
 	   %>
 	   <input type="hidden" name=action value=Confirm>
 	      <input type="submit" value="Aceptar">
+	    
 	      </form>
-    </section>
-    <footer>
-      Propiedad de Mi Playa, S.A. 2017
-    </footer>
+	      </main>
+<%@include file="footer.jsp"%>
   </body>
 </html>

@@ -35,7 +35,7 @@ public class listapartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String preQuery="SELECT a.id_apartamento,pe.nombre,a.edificio,a.ano,a.recamaras,a.costo_alquiler,"
+		String preQuery="SELECT a.id_apartamento,CONCAT(pe.nombre,' ',pe.apellido),a.edificio,a.ano,a.recamaras,a.costo_alquiler,"
 				+"CASE WHEN ca.fecha_salida>LOCALTIMESTAMP AND ca.fecha_entrada<LOCALTIMESTAMP THEN 'OCUPADO' ELSE 'DISPONIBLE' END AS Estado "
 				+"FROM Apartamento AS a "
 				+"LEFT JOIN ClienteApartamento AS ca ON ca.id_apartamento=a.id_apartamento "

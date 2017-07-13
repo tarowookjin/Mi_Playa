@@ -13,6 +13,10 @@ if(session.getAttribute("user") == null){
 </head>
 <%@include file="header.jsp"%>
 <main>
+<div class="body-navbar">
+			<a class="nav-left" href="${pageContext.request.contextPath}/web/inicio.jsp">&#60;Menu Principal</a>
+		</div>
+		<br class="float-stopper">
  <form class="" action="${pageContext.request.contextPath}/RegistroPropietario" method="post">
     	Paso 1:
       Nombre:

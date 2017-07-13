@@ -5,7 +5,7 @@
 <html>
 <head>
 <%
-out.print(session.getAttribute("user") );
+
 if(session.getAttribute("user") == null){
 	
 	%> <jsp:forward page="/web/login.jsp" /><% 
@@ -51,7 +51,7 @@ log(cliente.getApellido());
       <input type="text" name="cedula" required autofocus placeholder="Cedula del Cliente" title="Introduzca su nombre aqui" value = "<%out.print(cliente.getCedula());%>"><br><br>
 
       Fecha de entrada:
-      <input type="date" name="fecha_entrada" required value = "<%out.print(alquiler.getFecha_entrada());%>"><br><br>
+      <input type="date" name="fecha_entrada" min required value = "<%out.print(alquiler.getFecha_entrada());%>"><br><br>
       Fecha de salida:
       <input type="date" name="fecha_salida" required value = "<%out.print(alquiler.getFecha_salida());%>"><br><br>
       Cantidad de personas:

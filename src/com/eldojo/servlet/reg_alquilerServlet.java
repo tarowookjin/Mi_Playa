@@ -142,7 +142,7 @@ public class reg_alquilerServlet extends HttpServlet {
 				stment = con.createStatement();
 				log(insertAlquilerQuery);
 				resultSet=stment.executeQuery(insertAlquilerQuery);	
-				response.getWriter().println("<a href=\"${pageContext.request.contextPath}/web/inicio.jsp\">TODO SALIO BIEN, REGRESAR AL INICIO</a>");
+				response.getWriter().println("<a href=\""+request.getContextPath()+"/web/inicio.jsp\">TODO SALIO BIEN, REGRESAR AL INICIO</a>");
 				}		
 						catch(Exception e)
 						{
@@ -172,7 +172,7 @@ public class reg_alquilerServlet extends HttpServlet {
 			client.setNombre(request.getParameter("nombre"));
 			client.setApellido(request.getParameter("apellido"));
 			client.setCedula(request.getParameter("cedula"));
-			String avaibleApartmentsQuery = "SELECT * FROM Apartamento AS a LEFT JOIN ClienteApartamento AS ca on a.id_apartamento = ca.id_apartamento WHERE (ca.fecha_salida IS NULL OR ca.fecha_salida<"  
+			String avaibleApartmentsQuery = "SELECT DISTINCT a.recamaras, a.ano, a.costo_alquiler, a.costo_mantenimiento, a.edificio,  a.id_apartamento  FROM Apartamento AS a LEFT JOIN ClienteApartamento AS ca on a.id_apartamento = ca.id_apartamento WHERE (ca.fecha_salida IS NULL OR ca.fecha_salida<"  
 					+"\'"+rent.getFecha_entrada()+"\');";
 				try
 				{
