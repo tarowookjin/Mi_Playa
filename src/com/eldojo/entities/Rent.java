@@ -8,17 +8,6 @@ public class Rent {
 	private int cantPersonas;
 	private String tipoApartamento;
 	private String tipoPago;
-	private Rent(int codigo, String fecha_entrada, String fecha_salida, float monto){
-		this.codigo=codigo;
-		this.fecha_entrada=fecha_entrada;
-		this.fecha_salida=fecha_salida;
-		this.monto=monto;
-	}
-	private Rent( String fecha_entrada, String fecha_salida, float monto){
-		this.fecha_entrada=fecha_entrada;
-		this.fecha_salida=fecha_salida;
-		this.monto=monto;
-	}
 	public Rent()
 	{
 		fecha_entrada="";

@@ -1,5 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.eldojo.entities.*" %> 
+    <%
+
+
+Client cliente = (Client) request.getAttribute("cliente");
+Rent alquiler = (Rent) request.getAttribute("alquiler");
+Apartment apt = (Apartment) request.getAttribute("apartment");
+if(cliente!=null)
+{
+	
+}
+if(alquiler!=null)
+{
+	
+}
+
+	
+
+%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,13 +43,21 @@
     </header>
 
     <section>
-      Nombre: Roy Henriquez<br><br>
-      Fecha de entrada: 06/14/17<br><br>
-      Fecha de salida: 06/17/17<br><br>
-      Cantidad de personas: 2<br><br>
-      Apartamento Nº 4A<br><br>
-      Monto a pagar: $120.00<br><br>
-      <input type="submit" name="confimarcion" value="Aceptar">
+    <form action=/RegistroAlquiler method=post>
+      <%
+	      out.println("<p>Nombre:"+cliente.getNombre()+"</p>");
+	      out.println("<p>Apellido:"+cliente.getApellido()+"</p>");
+	      out.println("<p>Cedula:"+cliente.getCedula()+" <br>");
+	      out.println("<p>Fecha de Entrada:"+alquiler.getFecha_entrada()+"</p>");
+	      out.println("<p>Fecha de Salida:"+alquiler.getFecha_salida()+"</p>");
+	      out.println("<p>Cantidad de Personas:"+alquiler.getCantPersonas()+"</p>");
+	      out.println("<p>Metodo de Pago:"+alquiler.getMonto()+"</p>");
+	      out.println("<p>SubTotal:"+apt.getCosto_alquiler()+"</p>");
+	      out.println("<p>Total:"+apt.getCosto_alquiler()*1.07+"</p>");
+	   %>
+	   <input type="hidden" name=action value=Confirm>
+	      <input type="submit" value="Aceptar">
+	      </form>
     </section>
     <footer>
       Propiedad de Mi Playa, S.A. 2017
