@@ -58,16 +58,16 @@ log(cliente.getApellido());
       Fecha de salida:
       <input type="date" name="fecha_salida" required value = "<%out.print(alquiler.getFecha_salida());%>"><br><br>
       Cantidad de personas:
-      <select class="" name="cant_personas">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+      <select class="" name="cant_personas" ">
+        <option <%if(alquiler.getCantPersonas()==1)out.print("Selected"); %> value="1">1</option>
+        <option <%if(alquiler.getCantPersonas()==2)out.print("Selected"); %>  value="2">2</option>
+        <option <%if(alquiler.getCantPersonas()==3)out.print("Selected"); %>  value="3">3</option>
+        <option <%if(alquiler.getCantPersonas()==4)out.print("Selected"); %>  value="4">4</option>
       </select><br><br>
       Forma de pago:
-      <select class="" name="pago">
-        <option value="Efectivo">Efectivo</option>
-        <option value="Credito">Credito</option>
+      <select class="" name="pago" ">
+        <option <%if(alquiler.getTipoPago().equals("Efectivo"))out.print("Selected"); %> value="Efectivo">Efectivo</option>
+        <option <%if(alquiler.getTipoPago().equals("Credito"))out.print("Selected"); %> value="Credito">Credito</option>
       </select><br><br>
       <input class ="button" type="submit" name="enviar" value="Enviar">
 	      </form>

@@ -25,6 +25,7 @@ public class reg_alquilerServlet extends HttpServlet {
 	private Rent rent = null;
 	private Client client = null;
 	private ArrayList<Apartment> apartments = null;
+	private Apartment apartment =null;
 	private Integer paso = null; 
        
     /**
@@ -54,6 +55,7 @@ public class reg_alquilerServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
+		
 		if(action!=null)
 		{
 			if(action.equals("back"))
@@ -62,6 +64,29 @@ public class reg_alquilerServlet extends HttpServlet {
 				request.setAttribute("cliente",client);
 				request.setAttribute("alquiler",rent);
 				rd.forward(request, response);
+			}
+			if(action.equals("Resumen"))
+			{
+				int id_apartment = Integer.parseInt(request.getParameter("id_apt"));
+				
+				for(Apartment tmpApt:apartments)
+				{
+					if(tmpApt.getId_apartamento()==id_apartment)
+					{
+						apartment =tmpApt;
+						break;
+					}
+				}
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/confirmacion.jsp");
+				request.setAttribute("cliente",client);
+				request.setAttribute("alquiler",rent);
+				request.setAttribute("apartment",apartment);
+				rd.forward(request, response);
+				
+			}
+			if(action.equals("Confirmar"))
+			{
+				
 			}
 			
 		}
@@ -78,13 +103,13 @@ public class reg_alquilerServlet extends HttpServlet {
 			rent.setFecha_entrada(request.getParameter("fecha_entrada"));
 			rent.setFecha_salida(request.getParameter("fecha_salida"));
 			rent.setCantPersonas(Integer.parseInt(request.getParameter("cant_personas")));
-
 			rent.setTipoPago(request.getParameter("pago"));
 			if(client==null)
 			{
 				client =new Client();
 			}
 			client.setNombre(request.getParameter("nombre"));
+			client.setApellido(request.getParameter("apellido"));
 			client.setCedula(request.getParameter("cedula"));
 			String avaibleApartmentsQuery = "SELECT * FROM Apartamento AS a INNER JOIN ClienteApartamento AS ca on a.id_apartamento = ca.id_apartamento WHERE ca.fecha_salida<"  
 					+"\'"+rent.getFecha_salida()+"\'";
@@ -110,10 +135,10 @@ public class reg_alquilerServlet extends HttpServlet {
 					for(Apartment apt: apartments)
 					{
 						availableApartmentsTable +="<tr>";
-						availableApartmentsTable +="<td><input type=\"radio\" name=\"id_apt\" value=\""+apt.getId_apartamento()+"\"></td>";
+						availableApartmentsTable +="<td><input required type=\"radio\" name=\"id_apt\" value=\""+apt.getId_apartamento()+"\"></td>";
 						availableApartmentsTable +="<td>"+apt.getId_apartamento()+"</td>";
 						availableApartmentsTable +="<td>"+apt.getRecamaras()+"</td>";
-						availableApartmentsTable +="<td"+apt.getAno()+"</td>";
+						availableApartmentsTable +="<td>"+apt.getAno()+"</td>";
 						availableApartmentsTable +="<td>"+apt.getCosto_alquiler()+"</td>";
 						availableApartmentsTable +="<td>"+apt.getCosto_mantenimiento()+"</td>";
 						availableApartmentsTable +="<td>"+apt.getEdificio()+"</td>";
@@ -122,7 +147,7 @@ public class reg_alquilerServlet extends HttpServlet {
 					availableApartmentsTable +="</table>";
 					RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/SeleccionApartamento.jsp");
 					request.setAttribute("tableApartmentDisponibles", availableApartmentsTable);
-					request.setAttribute("clientes",client);
+					request.setAttribute("cliente",client);
 					request.setAttribute("alquiler",rent);
 					rd.forward(request, response);
 				}

@@ -46,8 +46,17 @@ if(alquiler!=null)
 			</div>
 		</form>
 		<br class="float-stopper">
-
+		
 	      <%
+	      out.println("<p>Nombre:"+cliente.getNombre()+"</p>");
+	      out.println("<p>Apellido:"+cliente.getApellido()+"</p>");
+	      out.println("<p>Cedula:"+cliente.getCedula()+" <br>");
+	      out.println("<p>Fecha de Entrada:"+alquiler.getFecha_entrada()+"</p>");
+	      out.println("<p>Fecha de Salida:"+alquiler.getFecha_salida()+"</p>");
+	      out.println("<p>Cantidad de Personas:"+alquiler.getCantPersonas()+"</p>");
+	      out.println("<p>Metodo de Pago:"+alquiler.getTipoPago()+"</p>");
+	      %>
+	      <% 
 	      if(request.getAttribute("tableApartmentDisponibles")!=null)
 	      {
 	    	  %>
@@ -59,6 +68,8 @@ if(alquiler!=null)
 	    	  
 	      
 	      %>
+	      <input type="hidden" name=action value=Resumen>
+	      <input class ="button" type="submit">
 	      </form>
 	      <%} %>
 	

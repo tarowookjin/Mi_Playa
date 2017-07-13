@@ -3,17 +3,17 @@ public class Rent {
 	private int codigo;
 	private String fecha_entrada;
 	private String fecha_salida;
-	private float monto;
-	private Rent(int codigo, String fecha_entrada, String fecha_salida, float monto){
-		this.codigo=codigo;
-		this.fecha_entrada=fecha_entrada;
-		this.fecha_salida=fecha_salida;
-		this.monto=monto;
-	}
+	private Double monto;
+	private int cantPersonas;
+	private String tipoPago;
+
 	public Rent()
 	{
-		
-		
+		monto = 0.0;
+		tipoPago="";
+		cantPersonas=0;
+		 fecha_entrada="";
+		 fecha_salida="";
 	}
 	public int getCodigo() {
 		return codigo;
@@ -33,11 +33,23 @@ public class Rent {
 	public void setFecha_salida(String fecha_salida) {
 		this.fecha_salida = fecha_salida;
 	}
-	public float getMonto() {
+	public Double getMonto() {
 		return monto;
 	}
-	public void setMonto(float monto) {
+	public void setMonto(Double monto) {
 		this.monto = monto;
+	}
+	public int getCantPersonas() {
+		return cantPersonas;
+	}
+	public void setCantPersonas(int cantPersonas) {
+		this.cantPersonas = cantPersonas;
+	}
+	public String getTipoPago() {
+		return tipoPago;
+	}
+	public void setTipoPago(String tipoPago) {
+		this.tipoPago = tipoPago;
 	}
 
 }
