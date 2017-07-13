@@ -1,17 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.eldojo.entities.*" %> 
 <!DOCTYPE html>
 <html>
 <head>
+<%
+Integer paso = 1;
+request.setAttribute("paso",paso);
+Client cliente = (Client) request.getAttribute("cliente");
+Rent alquiler = (Rent) request.getAttribute("alquiler");
+
+if(cliente==null)
+{
+	cliente = new Client();
+}
+if(alquiler==null)
+{
+	alquiler =new Rent();
+}
+log(cliente.getNombre());
+log(cliente.getApellido());
+
+%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <title></title>
-    <link rel="stylesheet" type="text/css" href=""${pageContext.request.contextPath}/web/css/main.css"">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">
   </head>
   <body>
 		<header>
 
 			<div id="header">
-				<img src="img/logoplaya.png" width="70px">
+				<img src="${pageContext.request.contextPath}/web/img/logoplaya.png" width="70px">
 			</div>
 			<div id="header">
 				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
@@ -24,13 +44,19 @@
 			<a class="nav-left" href=Inicio.html>&#60;Menu Principal</a>
 		</div>
 		<br class="float-stopper">
-    <form class="" action="confirmacion.html" method="get">
+    <form class="" action="${pageContext.request.contextPath}/RegistroAlquiler" method="post">
+    Paso 1:
       Nombre:
-      <input type="text" name="Nombre" required autofocus placeholder="Escriba su Nombre" title="Introduzca su nombre aqui"><br><br>
+      <input type="text" name="nombre" required autofocus placeholder="Nombre del Cliente" title="Nombre" value = "<%out.print(cliente.getNombre());%>"><br><br>
+       Cedula:
+      <input type="text" name="apellido" required autofocus placeholder="Apellido del Cliente" title="Apellido" value = "<%out.print(cliente.getCedula());%>"><br><br>
+      Cedula:
+      <input type="text" name="cedula" required autofocus placeholder="Cedula del Cliente" title="Introduzca su nombre aqui" value = "<%out.print(cliente.getCedula());%>"><br><br>
+
       Fecha de entrada:
-      <input type="date" name="fecha_entrada" required><br><br>
+      <input type="date" name="fecha_entrada" required value = "<%out.print(alquiler.getFecha_entrada());%>"><br><br>
       Fecha de salida:
-      <input type="date" name="fecha_salida" required><br><br>
+      <input type="date" name="fecha_salida" required value = "<%out.print(alquiler.getFecha_salida());%>"><br><br>
       Cantidad de personas:
       <select class="" name="cant_personas">
         <option value="1">1</option>
@@ -38,19 +64,15 @@
         <option value="3">3</option>
         <option value="4">4</option>
       </select><br><br>
-      Tipo de apartamento:
-      <select class="" name="tipo_apt">
-        <option value="perm">Permanente</option>
-        <option value="temp">Temporal</option>
-      </select><br><br>
       Forma de pago:
       <select class="" name="pago">
-        <option value="efec">Efectivo</option>
-        <option value="cred">Credito</option>
+        <option value="Efectivo">Efectivo</option>
+        <option value="Credito">Credito</option>
       </select><br><br>
-      <input type="submit" name="enviar" value="Enviar">
- <a class="button" href="factura.html">Enviar</a>
+      <input class ="button" type="submit" name="enviar" value="Enviar">
 	      </form>
+	    
+	
     </main>
 		<%@include file="footer.jsp"%>
   </body>

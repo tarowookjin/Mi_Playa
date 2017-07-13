@@ -1,7 +1,10 @@
+package com.eldojo.entities;
 
 public class Client {
 	private int cod_cli;
+	private String cedula;
 	private String nombre;
+	private String apellido;
 	private String direccion;
 	private String telefono;
 	private Client(int cod_cli, String nombre, String direccion, String telefono){
@@ -9,6 +12,12 @@ public class Client {
 		this.nombre=nombre;
 		this.direccion=direccion;
 		this.telefono=telefono;
+	}
+	public Client()
+	{
+		cedula ="";
+		nombre = "";
+		setApellido("");
 	}
 	public int getCod_cli() {
 		return cod_cli;
@@ -33,5 +42,17 @@ public class Client {
 	}
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+	public String getCedula() {
+		return cedula;
+	}
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 }
