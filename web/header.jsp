@@ -23,7 +23,6 @@ if(session.getAttribute("user") == null){
 </head>
 <body>
 		<header>
-
 			<div id="header">
 				<img src="${pageContext.request.contextPath}/web/img/logoplaya.png" width="70px">
 			</div>
@@ -31,9 +30,11 @@ if(session.getAttribute("user") == null){
 				<h6>Las Mejores Vacaciones que Disfrutaras</h6>
 				<h1>Mi Playita S.A.</h1>
 			</div>
-			<form action="${pageContext.request.contextPath}/web/stopSession.jsp"><input type=submit value ="Cerrar Session"></form>
 			<div id="servertime">
 			<span class="more" id="demo"></span>
+			<br>
+			<br>
+			<form class="closesesion"action="${pageContext.request.contextPath}/web/stopSession.jsp"><input type=submit value ="Cerrar Session"></form>
 			</div>
 			<br class="float-stopper">
 		</header>

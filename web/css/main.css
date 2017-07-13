@@ -16,6 +16,9 @@
     top: 0px;
     position: absolute;
 }
+.closesesion{
+	float:center;
+}
 header div img{
 	margin-top: 10px;
 	margin-left: 10px;
