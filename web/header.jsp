@@ -5,7 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">
 		<script type="text/javascript">
 		var myVar=setInterval(function () {myTimer()}, 1000);
 		var counter = 0;
@@ -13,7 +12,9 @@
    		var date = new Date();
     	document.getElementById("demo").innerHTML = date.toUTCString()
 		}
-		</script>		
+		</script>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/main.css">
+				
 </head>
 <body>
 		<header>

@@ -64,6 +64,6 @@ log(cliente.getApellido());
 	    
 	
     </main>
-		<%@include file="footer.jsp"%>
+		<%@include file="/web/footer.jsp"%>
   </body>
 </html>
