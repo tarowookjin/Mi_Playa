@@ -8,15 +8,17 @@ import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-public class RegistroApartamento {
+@WebServlet("/RegistroApartamento")
+public class RegistroApartamento extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String preQuery="SELECT CONCAT(pe.nombre,' ',pe.apellido) AS Propietario " 
+		String propietaryNamesQuery="SELECT CONCAT(pe.nombre,' ',pe.apellido)AS Propietario,p.id_propietario AS id_prop " 
 				+"FROM Propietario AS p "
 				+"JOIN Persona AS pe ON p.propietario_ced=pe.cedula ";
 				Connection cn=null;
@@ -25,16 +27,16 @@ public class RegistroApartamento {
 				try {
 					cn=iziConn.Conectar();
 					stment = cn.createStatement();
-					log(preQuery);
-					resultSet = stment.executeQuery(preQuery);
-					String str="";
+					log(propietaryNamesQuery);
+					resultSet = stment.executeQuery(propietaryNamesQuery);
+					String propietaryNamesSelect="";
 					while(resultSet.next()) {
-						str+="<option value=\""+resultSet.getString("Propietario")+"\">"+resultSet.getString("Propietario")+"</option>";
+						propietaryNamesSelect+="<option value=\""+resultSet.getString("id_prop")+"\">"+resultSet.getString("Propietario")+"</option>";
 					}
 					cn.close();
 					response.setContentType("text/html");
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/informeIngreso.jsp");
-					request.setAttribute("propietarios_disp",str);
+					RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/RegistroApartamento.jsp");
+					request.setAttribute("propietarios_disp",propietaryNamesSelect);
 					rd.forward(request, response);
 				} catch (SQLException | ClassNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -47,61 +49,36 @@ public class RegistroApartamento {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String preQuery="SELECT CONCAT(pe.nombre,' ',pe.apellido) AS Propietario " 
-				+"FROM Propietario AS p "
-				+"JOIN Persona AS pe ON p.propietario_ced=pe.cedula ";
-		String propietario = request.getParameter("chose_propietario");
-		String preQuery2="SELECT c.id_apartamento,c.fecha_entrada,c.monto "
-				+"FROM Propietario AS p "
-				+"JOIN Apartamento AS a ON a.id_propietario=p.id_propietario "
-				+"JOIN Persona AS pe ON p.propietario_ced=pe.cedula "
-				+"JOIN ClienteApartamento AS c ON a.id_apartamento=c.id_apartamento "
-				+"WHERE CONCAT(pe.nombre,' ',pe.apellido) LIKE '"+propietario+"' "
-				+"ORDER BY c.id_apartamento";
+		
+		String id_prop = request.getParameter("id_prop");
+		double costo_alquiler = Double.parseDouble(request.getParameter("costo_alquiler"));
+		double costo_mantenimiento = Double.parseDouble(request.getParameter("costo_mantenimiento"));
+		int ano = Integer.parseInt(request.getParameter("ano"));
+		int recamaras = Integer.parseInt(request.getParameter("recamaras"));
+		int edificio= Integer.parseInt(request.getParameter("edificio"));
+		String insertNewApartmentQuery = "INSERT INTO Apartamento(ano,costo_alquiler,costo_mantenimiento,edificio,recamaras,id_propietario) "
+				+"VALUES("
+				+ano+","
+				+costo_alquiler+","
+				+costo_mantenimiento+","
+				+edificio+","
+				+recamaras+","
+				+id_prop
+				+");";
 				Connection cn=null;
 				Statement stment =null;
 				ResultSet resultSet = null;
 				try {
 					cn=iziConn.Conectar();
 					stment = cn.createStatement();
-					boolean find_propie=false;
-					log(preQuery);
-					resultSet = stment.executeQuery(preQuery);
-					String str="";
-					while(resultSet.next()) {
-						String tempropietario=resultSet.getString("Propietario");
-						if(tempropietario.equals(propietario)) {
-							find_propie=true;
-						}
-						
-					}
-					
-					String str2="Propietario: "+propietario+"<tr>"
-							+"<th>ID-Apartamento</th>"
-							+"<th>Fecha de Alquiler</th>"
-							+"<th>Monto Cobrado</th>"
-							+"</tr>";
-					if(find_propie) {
-						resultSet = stment.executeQuery(preQuery2);
-						
-						while(resultSet.next()) {
-							log("HEYYYYMEASEFDFGDFH");
-							str2+="<tr><td>"+resultSet.getString(1)+"</td><td>"+resultSet.getString(2)
-									+"</td><td>"+resultSet.getString(3)
-									+"</td></tr>";
-						}
-					}
+					log(insertNewApartmentQuery);
+					resultSet = stment.executeQuery(insertNewApartmentQuery);
 					cn.close();
-					response.setContentType("text/html");
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("/web/informeIngreso.jsp");
-					request.setAttribute("lista_monto",str2);
-					doGet(request, response);
-					//rd.forward(request, response);
+					response.getWriter().println("<a href=\""+request.getContextPath()+"/web/inicio.jsp\">TODO SALIO BIEN, REGRESAR AL INICIO</a>");
 				} catch (SQLException | ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					System.err.println(e);
 				}
 				
 	}
-
 }
