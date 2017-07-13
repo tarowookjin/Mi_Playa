@@ -14,7 +14,7 @@
 	<%@include file="/web/header.jsp"%>
 		<main>
 		<div class="body-navbar">
-			<a class="nav-left" href={pageContext.request.contextPath}/web/inicio.jsp>&#60;Menu Principal</a>
+			<a class="nav-left" href="${pageContext.request.contextPath}/web/inicio.jsp">&#60;Menu Principal</a>
 		</div>
 		<br id="clear">
 		<h4>Listado de Clientes</h4>
