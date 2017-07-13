@@ -36,11 +36,12 @@ public class listapartServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String preQuery="SELECT a.id_apartamento,pe.nombre,a.edificio,a.ano,a.recamaras,a.costo_alquiler,"
-				+"CASE WHEN ca.fecha_salida>LOCALTIMESTAMP THEN 'OCUPADO' ELSE 'DISPONIBLE' END AS Estado "
+				+"CASE WHEN ca.fecha_salida>LOCALTIMESTAMP AND ca.fecha_entrada<LOCALTIMESTAMP THEN 'OCUPADO' ELSE 'DISPONIBLE' END AS Estado "
 				+"FROM Apartamento AS a "
-				+"INNER JOIN ClienteApartamento AS ca ON ca.id_apartamento=a.id_apartamento "
+				+"LEFT JOIN ClienteApartamento AS ca ON ca.id_apartamento=a.id_apartamento "
 				+"INNER JOIN Propietario AS p ON a.id_propietario=p.id_propietario "
-				+"INNER JOIN Persona pe ON pe.cedula=p.propietario_ced;";
+				+"INNER JOIN Persona pe ON pe.cedula=p.propietario_ced "
+				+"ORDER BY pe.nombre;";
 				Connection cn=null;
 				Statement stment =null;
 				ResultSet resultSet = null;
