@@ -32,7 +32,7 @@ if(alquiler!=null)
 	    <form action="${pageContext.request.contextPath}/RegistroAlquiler" method="post">
 	    <input type="hidden" name="action" value="back">
 			<div class="body-navbar">
-				<input class="nav-left" type="submit">&#60;Atras</a>
+				<input class="nav-left" type="submit" value=&#60Atras>;
 			</div>
 		</form>
 		<br class="float-stopper">

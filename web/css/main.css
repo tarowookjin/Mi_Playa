@@ -106,7 +106,7 @@ div.body-navbar{
 	float: left;
 
 }
-div.body-navbar a{
+div.body-navbar a,input{
 	text-decoration:none;
 	color:#1A237E;
 	font-size:12px;
@@ -115,7 +115,7 @@ div.body-navbar a{
 	border-radius:30px;
 }
 
-div.body-navbar a:hover{
+div.body-navbar a:hover,input:hover{
 	text-decoration:none;
 	color:#5C6BC0;
 	border-color:#9E9E9E;
