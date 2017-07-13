@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
@@ -27,97 +27,18 @@
 		<br id="clear">
 		<h4>Listado de Apartamentos Ocupados</h4>
 			<table>
-				<tr>
-					<th>
-						ID-Cliente
-					</th>	
-					<th>
-						Nombre
-					</th>
-					<th>
-						ID-Apartamento	
-					</th>
-					<th>
-						Propietario
-					</th>
-					<th>
-						Noches Restantes
-					</th>
-					<th>
-						Dia de Entrada
-					</th>
-					<th>
-						Dia de Salida
-					</th>	
-				</tr>
-				<tr>
-					<td>
-						999
-					</td>
-					<td>
-						Pepe Frog
-					</td>
-					<td>
-						666
-					</td>
-					<td>
-						Klel Wolfram
-					</td>
-					<td>
-						7
-					</td>
-					<td>
-						1/1/17
-					</td>
-					<td>
-						8/1/17
-					</td>
-				</tr>
-				<tr>
-					<td>
-						1234
-					</td>
-					<td>
-						TaroWJ
-					</td>
-					<td>
-						098
-					</td>
-					<td>
-						Alcalde Diaz
-					</td>
-					<td>
-						3
-					</td>
-					<td>
-						5/2/16
-					</td>
-					<td>
-						10/2/16
-					</td>
-				</tr>
-				<tr>
-					<td>
-						644
-					</td>
-					<td>
-						AuronPlay
-					</td>
-					<td>
-						573
-					</td>
-					<td>
-						Vegeta777
-					</td>
-					<td>
-						4
-					</td>
-					<td>
-						8/2/16
-					</td>
-					<td>
-						12/2/16
-					</td>
+			<%
+			//tabla
+			String str=(String)pageContext.findAttribute("ocuapart");
+			if(str!=null)
+	    	{
+	    		out.println(str);
+	    	}
+			else
+			{
+	    		out.println("Algo salio mal :c");
+			}
+			%>
 			</table>
 			<div class="body-navbar">
 				<a class="nav-left" href=#>DESCARGAR</a>
